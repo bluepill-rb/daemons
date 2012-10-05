@@ -70,11 +70,11 @@ module Daemons
     end
     
     def output_logfile
-      (options[:log_output] && logdir) ? File.join(logdir, @group.app_name + '.output') : nil
+      (options[:log_output] && logdir) ? File.join(logdir, @group.app_name + '.log') : nil
     end
     
     def logfile
-      logdir ? File.join(logdir, @group.app_name + '.log') : nil
+      logdir ? File.join(logdir, @group.app_name + '.err.log') : nil
     end
     
     # this function is only used to daemonize the currently running process (Daemons.daemonize)
