@@ -11,6 +11,7 @@ require 'daemons/monitor'
 require 'daemons/application'
 require 'daemons/application_group'
 require 'daemons/controller'
+require "daemons/version"
 
 
 # All functions and classes that Daemons provides reside in this module.
