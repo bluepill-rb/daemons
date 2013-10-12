@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'daemons/version'
 
 Gem::Specification.new do |spec|
-  spec.name              = "daemons"
+  spec.name              = "mlanett-daemons"
   spec.version           = Daemons::VERSION
 
   spec.authors           = ["Thomas Uehlinger"]
