@@ -1,0 +1,8 @@
+== What is Daemons?
+
+This is a fork of the original svn upstream by Thomas Uehlinger.
+
+It incorporates some bug fixes from myself and some other git repos,
+which are forked from an older version of the upstream.
+
+This gem is pushed to rubygems as mlanett-daemons.
