@@ -6,7 +6,10 @@ module Daemons
   class Pid
   
     def Pid.running?(pid)
-      return false unless pid
+      # We have seen an odd problem where the pid file exists but is empty
+      # In this case we want to not send a kill but we do want to zap the file
+      # Thus while technically pid==0 => this process => running=true, treat it as running=false
+      return false if ! pid || pid == 0
       
       # Check if process is in existence
       # The simplest way to do this is to send signal '0'
