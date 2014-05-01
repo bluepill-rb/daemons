@@ -70,8 +70,11 @@ module Daemonize
   
       # Prevent the possibility of acquiring a controlling terminal
       trap 'SIGHUP', 'IGNORE'
-      exit if pid = safefork
-  
+      if pid = safefork
+        wr.close
+        ::Process::exit!(true)
+      end
+
       wr.write Process.pid
       wr.close
       
@@ -89,7 +92,7 @@ module Daemonize
       
       block.call
       
-      exit
+      ::Process::exit!(true)
     end
   end
   module_function :call_as_daemon
@@ -107,7 +110,9 @@ module Daemonize
 
     # Prevent the possibility of acquiring a controlling terminal
     trap 'SIGHUP', 'IGNORE'
-    exit if pid = safefork
+    if pid = safefork
+      ::Process::exit!(true)
+    end
     
     $0 = app_name if app_name
     
