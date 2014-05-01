@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mlanett-daemons (1.1.10.1)
+    blue-daemons (1.1.11)
 
 GEM
   remote: https://rubygems.org/
@@ -21,7 +21,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  blue-daemons!
   bundler (>= 1.0)
-  mlanett-daemons!
   rake
   rspec
